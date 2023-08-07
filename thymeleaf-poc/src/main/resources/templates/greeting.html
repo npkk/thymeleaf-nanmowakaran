@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Serving Web Content</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <p th:text="'Hello, ' + ${name} + '!'" ></p>
+    <p th:text="${Dto.g}"></p>
+    
+    <!-- error -->
+    <!-- <input type="text" th:disabled="${Dto.g} != 'hello' || !${Dto.f}" value="error"></input> -->
+    
+    <input type="text" th:disabled="${Dto.g} != 'hello' or !${Dto.f}" value="hoge"></input>
+    <input type="text" th:disabled="${(Dto.g != 'hello' || Dto.f != true)}" value="hoge2"></input>
+</body>
+</html>
